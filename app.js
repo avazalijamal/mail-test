@@ -38,7 +38,7 @@ app.get('/mail', async (req, res) => {
     let status, data;
 
     try {
-        await (new Mail).sendText(process.env.smtp_from, "avaz.aj@erp-intel.com", "Test", "Salam dunya")
+        await (new Mail).sendText(process.env.smtp_from, "avaz.aj@erp-intel.com", "Test", `Salam dunya: ${(new Date).getTime()}`)
         status = 201
         data = 'Success messaje'
     } catch (err) {
